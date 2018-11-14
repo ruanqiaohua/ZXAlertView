@@ -16,8 +16,6 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UILabel *messageLabel;
 @property (nonatomic, strong) UIView *bottomView;
 @property (nonatomic, strong) NSMutableArray *titles;
 @property (nonatomic, strong) NSMutableArray *blocks;
@@ -26,15 +24,13 @@
 @implementation ZXAlertView
 
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message {
-    ZXAlertView *view = [[ZXAlertView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    if (self) {
-        view.title = title;
-        view.message = message;
-        view.contentWidth = SCREEN_W - FIX(130);
-        view.contentMinHeight = 120;
-        view.space = 20;
-        view.bottomHeight = 40;
-    }
+    ZXAlertView *view = [[self alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    view.title = title;
+    view.message = message;
+    view.contentWidth = SCREEN_W - FIX(130);
+    view.contentMinHeight = 120;
+    view.space = 20;
+    view.bottomHeight = 40;
     return view;
 }
 
@@ -200,6 +196,13 @@
 
 - (void)dealloc {
     NSLog(@"ZXAlertView dealloc");
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UIView *view = touches.anyObject.view;
+    if (_backgroundTouchHidden && view == self) {
+        [self hidden];
+    }
 }
 
 @end

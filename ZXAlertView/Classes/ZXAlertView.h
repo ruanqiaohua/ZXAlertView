@@ -14,10 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^ActionBlock)(ZXAlertView *alert);
 
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *messageLabel;
+
 @property (nonatomic, assign) CGFloat contentWidth;
 @property (nonatomic, assign) CGFloat contentMinHeight;
 @property (nonatomic, assign) CGFloat space;
 @property (nonatomic, assign) CGFloat bottomHeight;
+@property (nonatomic, assign) BOOL backgroundTouchHidden;
 
 + (instancetype)alertWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message;
 - (void)addButton:(UIButton *)button block:(ActionBlock)block;
