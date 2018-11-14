@@ -25,9 +25,18 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    ZXAlertView *alertView = [ZXAlertView alertWithTitle:nil message:@"这是一个很长很长的消息列表这是一个很长很长的消息列表这是一个很长很长的消息列表这是一个很长很长的消息列表这是一个很长很长的消息列表"];
-    [alertView addActionWithTitle:@"取消"];
-    [alertView addActionWithTitle:@"知道了"];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    ZXAlertView *alertView = [ZXAlertView alertWithTitle:@"这是一个标题" message:@"这是一个标题"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.titleLabel.font = [UIFont systemFontOfSize:12];
+    [button setTitle:@"知道了" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [alertView addButton:button block:^(ZXAlertView * _Nonnull alert) {
+        [alert hidden];
+    }];
     [alertView show];
 }
 

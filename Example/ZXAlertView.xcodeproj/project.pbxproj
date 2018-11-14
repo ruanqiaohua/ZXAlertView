@@ -24,6 +24,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A8AD82D1DFC7F8EF659D35E3 /* Pods_ZXAlertView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE10440CBB03334975C2DDF5 /* Pods_ZXAlertView_Example.framework */; };
+		F10D9454219C494F0055A7F5 /* rizhan-saltandsunny-1149394-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F10D9453219C494F0055A7F5 /* rizhan-saltandsunny-1149394-unsplash.jpg */; };
 		F1F02502219BD2A00087788F /* ZXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F02501219BD2A00087788F /* ZXAlertView.m */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		ADAD7D7A7321C2DCD9772A89 /* Pods-ZXAlertView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXAlertView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZXAlertView_Tests/Pods-ZXAlertView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0E410F9B42FE28244AC44A6 /* Pods-ZXAlertView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXAlertView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZXAlertView_Example/Pods-ZXAlertView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EE10440CBB03334975C2DDF5 /* Pods_ZXAlertView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZXAlertView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10D9453219C494F0055A7F5 /* rizhan-saltandsunny-1149394-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rizhan-saltandsunny-1149394-unsplash.jpg"; sourceTree = "<group>"; };
 		F1F02500219BD2A00087788F /* ZXAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZXAlertView.h; path = ../ZXAlertView/Classes/ZXAlertView.h; sourceTree = "<group>"; };
 		F1F02501219BD2A00087788F /* ZXAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZXAlertView.m; path = ../ZXAlertView/Classes/ZXAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F10D9453219C494F0055A7F5 /* rizhan-saltandsunny-1149394-unsplash.jpg */,
 				6003F595195388D20070C39A /* ZXAlertView-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
@@ -283,6 +286,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				F10D9454219C494F0055A7F5 /* rizhan-saltandsunny-1149394-unsplash.jpg in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);

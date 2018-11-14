@@ -21,15 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w53-ih-YUW">
-                                <rect key="frame" x="161" y="205" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rizhan-saltandsunny-1149394-unsplash.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="iOz-62-HsG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="iOz-62-HsG" secondAttribute="bottom" id="ES3-3h-Hy6"/>
+                            <constraint firstItem="iOz-62-HsG" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="aDy-P8-Zf5"/>
+                            <constraint firstAttribute="trailing" secondItem="iOz-62-HsG" secondAttribute="trailing" id="f7H-7y-SjG"/>
+                            <constraint firstItem="iOz-62-HsG" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" id="tlD-ak-XKc"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,4 +39,7 @@
             <point key="canvasLocation" x="305" y="433"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rizhan-saltandsunny-1149394-unsplash.jpg" width="2992" height="3992"/>
+    </resources>
 </document>
