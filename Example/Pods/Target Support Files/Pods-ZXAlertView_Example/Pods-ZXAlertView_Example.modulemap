@@ -1,0 +1,6 @@
+framework module Pods_ZXAlertView_Example {
+  umbrella header "Pods-ZXAlertView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - ZXAlertView (0.1.0)
+
+DEPENDENCIES:
+  - ZXAlertView (from `../`)
+
+EXTERNAL SOURCES:
+  ZXAlertView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ZXAlertView: 56b651c138d7abf45311cd296611609e7684ecf1
+
+PODFILE CHECKSUM: fffe22f2df3d2dafc285ecf71de1feccae8f1eb0
+
+COCOAPODS: 1.5.3
