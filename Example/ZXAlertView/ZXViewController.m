@@ -29,13 +29,12 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    ZXAlertView *alertView = [ZXAlertView alertWithTitle:@"这是一个标题" message:@"这是一个标题"];
+    ZXAlertView *alertView = [ZXAlertView alertWithTitle:@"这是一个标题" message:@"这是一个内容这是一个内容这是一个内容这是一个内容这是一个内容这是一个内容"];
     alertView.backgroundTouchHidden = YES;
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    button.titleLabel.font = [UIFont systemFontOfSize:15];
-    [button setTitle:@"知道了" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [alertView addButton:button block:^(ZXAlertView * _Nonnull alert) {
+    [alertView addButton:[ZXAlertView cancelButton] block:^(ZXAlertView * _Nonnull alert) {
+        [alert hidden];
+    }];
+    [alertView addButton:[ZXAlertView sureButton] block:^(ZXAlertView * _Nonnull alert) {
         [alert hidden];
     }];
     [alertView show];

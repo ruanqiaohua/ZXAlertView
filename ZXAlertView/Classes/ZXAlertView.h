@@ -21,12 +21,16 @@ typedef void(^ActionBlock)(ZXAlertView *alert);
 @property (nonatomic, assign) CGFloat contentMinHeight;
 @property (nonatomic, assign) CGFloat space;
 @property (nonatomic, assign) CGFloat bottomHeight;
+@property (nonatomic, assign) CGFloat lineHeight;
 @property (nonatomic, assign) BOOL backgroundTouchHidden;
 
 + (instancetype)alertWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message;
 - (void)addButton:(UIButton *)button block:(ActionBlock)block;
 - (void)show;
 - (void)hidden;
++ (UIButton *)cancelButton;
++ (UIButton *)sureButton;
++ (UIButton *)knowButton;
 
 @end
 
