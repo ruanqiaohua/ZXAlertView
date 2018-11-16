@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UIView *bottomView;
 @property (nonatomic, strong) NSMutableArray *titles;
 @property (nonatomic, strong) NSMutableArray *blocks;
+@property (nonatomic, strong) UIWindow *window;
 @end
 
 @implementation ZXAlertView
@@ -36,10 +37,6 @@
     view.bottomHeight = 45;
     view.lineHeight = .5;
     return view;
-}
-
-- (void)fix:(CGFloat)width {
-    
 }
 
 - (UIView *)contentView {
@@ -66,7 +63,7 @@
         _messageView.backgroundColor = [UIColor colorWithWhite:1 alpha:Alpha];
         _messageView.frame = CGRectMake(0, 0, _contentWidth, _contentMinHeight-_bottomHeight-_lineHeight);
         [_contentView addSubview:_messageView];
-        [self addBlurView:_messageView];
+//        [self addBlurView:_messageView];
     }
     return _messageView;
 }
@@ -141,7 +138,7 @@
     [_bottomView addSubview:view];
 }
 
-- (void)addButton:(id)button block:(ActionBlock)block {
+- (void)addButton:(id)button block:(ZXActionBlock)block {
     if (!_titles) {
         _titles = [NSMutableArray array];
     }
@@ -168,14 +165,14 @@
 //            [self addLineView2:CGRectGetMaxX(button.frame)];
 //        }
         [_bottomView addSubview:view];
-        [self addBlurView:view];
+//        [self addBlurView:view];
         [view addSubview:button];
     }
 }
 
 - (void)buttonAction:(UIButton *)sender {
     
-    ActionBlock block = _blocks[sender.tag];
+    ZXActionBlock block = _blocks[sender.tag];
     if (block) {
         block(self);
     }
@@ -217,12 +214,17 @@
     [self bottomView];
     [self addButtons];
     [self updateContentView];
-    UIWindow *window = [UIApplication sharedApplication].windows.firstObject;
-    [window addSubview:self];
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _window.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
+    _window.windowLevel = UIWindowLevelAlert;
+    [_window addSubview:self];
+    [_window makeKeyAndVisible];
 }
 
 - (void)hidden {
-    [self removeFromSuperview];
+    _blocks = nil;
+    _window.hidden = YES;
+    _window = nil;
 }
 
 - (void)dealloc {

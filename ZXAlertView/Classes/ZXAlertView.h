@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZXAlertView : UIView
 
-typedef void(^ActionBlock)(ZXAlertView *alert);
+typedef void(^ZXActionBlock)(ZXAlertView *alert);
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *messageLabel;
@@ -25,7 +25,7 @@ typedef void(^ActionBlock)(ZXAlertView *alert);
 @property (nonatomic, assign) BOOL backgroundTouchHidden;
 
 + (instancetype)alertWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message;
-- (void)addButton:(UIButton *)button block:(ActionBlock)block;
+- (void)addButton:(UIButton *)button block:(ZXActionBlock)block;
 - (void)show;
 - (void)hidden;
 + (UIButton *)cancelButton;
