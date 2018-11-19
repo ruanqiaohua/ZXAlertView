@@ -151,7 +151,7 @@
 
 - (void)addButtons {
     
-    CGFloat lineWidth = .5*_titles.count-1;
+    CGFloat lineWidth = .5*(_titles.count-1);
     CGFloat width = (_contentWidth-lineWidth)/_titles.count;
     for (int i=0; i<_titles.count; i++) {
         UIView *view = [[UIView alloc] init];
@@ -161,11 +161,7 @@
         button.tag = i;
         button.frame = view.bounds;
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-//        if (i < _titles.count-1) {
-//            [self addLineView2:CGRectGetMaxX(button.frame)];
-//        }
         [_bottomView addSubview:view];
-//        [self addBlurView:view];
         [view addSubview:button];
     }
 }
