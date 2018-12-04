@@ -11,7 +11,7 @@
 #define SCREEN_W ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_H ([UIScreen mainScreen].bounds.size.height)
 #define FIX(x) (x*(SCREEN_W/375))
-#define Alpha 0.9
+#define Alpha 1.0
 #define LineSpacing 6
 
 @interface ZXAlertView ()
@@ -31,11 +31,11 @@
     ZXAlertView *view = [[self alloc] initWithFrame:[UIScreen mainScreen].bounds];
     view.title = title;
     view.message = message;
-    view.contentWidth = SCREEN_W - FIX(130);
+    view.contentWidth = ceilf(SCREEN_W - FIX(130));
     view.contentMinHeight = 140;
     view.space = 20;
     view.bottomHeight = 45;
-    view.lineHeight = .5;
+    view.lineHeight = 0.5;
     return view;
 }
 
@@ -127,13 +127,13 @@
 }
 
 - (void)addLineView1 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _contentWidth, .5)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _contentWidth, _lineHeight)];
     view.backgroundColor = [UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:1.0f];
     [_bottomView addSubview:view];
 }
 
 - (void)addLineView2:(CGFloat)x {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0, .5, CGRectGetHeight(_bottomView.frame))];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0, _lineHeight, CGRectGetHeight(_bottomView.frame))];
     view.backgroundColor = [UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:1.0f];
     [_bottomView addSubview:view];
 }
@@ -151,12 +151,12 @@
 
 - (void)addButtons {
     
-    CGFloat lineWidth = .5*(_titles.count-1);
-    CGFloat width = (_contentWidth-lineWidth)/_titles.count;
+    CGFloat lineWidth = _lineHeight*(_titles.count-1);
+    CGFloat width = ceilf(_contentWidth-lineWidth)/_titles.count;
     for (int i=0; i<_titles.count; i++) {
         UIView *view = [[UIView alloc] init];
         view.backgroundColor = [UIColor colorWithWhite:1 alpha:Alpha];
-        view.frame = CGRectMake((width+.5)*i, 0, width, _bottomHeight);
+        view.frame = CGRectMake((width+_lineHeight)*i, 0, width, _bottomHeight);
         UIButton *button = _titles[i];
         button.tag = i;
         button.frame = view.bounds;
@@ -240,7 +240,7 @@
     }
     UIFont *font = label.font;
     UIColor *color = label.textColor;
-    CGFloat textWidth = floorf(_contentWidth-2*_space);
+    CGFloat textWidth = _contentWidth-2*_space;
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
@@ -253,7 +253,7 @@
                                  NSForegroundColorAttributeName: color};
     label.attributedText = [[NSMutableAttributedString alloc] initWithString:string attributes:attributes];
     CGFloat height = [label sizeThatFits:CGSizeMake(textWidth, MAXFLOAT)].height;
-    return height;
+    return ceilf(height)+1;
 }
 
 + (UIButton *)cancelButton {
@@ -277,7 +277,7 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.titleLabel.font = [UIFont systemFontOfSize:15];
-    [button setTitle:@"知道了" forState:UIControlStateNormal];
+    [button setTitle:@"我知道了" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor colorWithRed:195.0f/255.0f green:142.0f/255.0f blue:66.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
     return button;
 }
