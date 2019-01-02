@@ -106,7 +106,12 @@
         _messageLabel.numberOfLines = 0;
         _messageLabel.font = [UIFont systemFontOfSize:14];
         _messageLabel.textColor = [UIColor colorWithRed:62.0f/255.0f green:62.0f/255.0f blue:62.0f/255.0f alpha:1.0f];
-        if (_message.length) {
+        if (_meessageAttributedString) {
+            height = [self setLabel:_messageLabel attributedString:_meessageAttributedString];
+            if (_title.length) {
+                y = CGRectGetMaxY(_titleLabel.frame)+8;
+            }
+        } else if (_message.length) {
             height = [self setLabel:_messageLabel text:_message];
             if (_title.length) {
                 y = CGRectGetMaxY(_titleLabel.frame)+8;
@@ -252,6 +257,17 @@
                                  NSFontAttributeName: font,
                                  NSForegroundColorAttributeName: color};
     label.attributedText = [[NSMutableAttributedString alloc] initWithString:string attributes:attributes];
+    CGFloat height = [label sizeThatFits:CGSizeMake(textWidth, MAXFLOAT)].height;
+    return ceilf(height)+1;
+}
+
+- (CGFloat)setLabel:(UILabel *)label attributedString:(NSMutableAttributedString *)attributedString {
+    
+    if (!attributedString || !label) {
+        return 0;
+    }
+    CGFloat textWidth = _contentWidth-2*_space;
+    label.attributedText = attributedString;
     CGFloat height = [label sizeThatFits:CGSizeMake(textWidth, MAXFLOAT)].height;
     return ceilf(height)+1;
 }

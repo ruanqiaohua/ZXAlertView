@@ -16,7 +16,7 @@ typedef void(^ZXActionBlock)(ZXAlertView *alert);
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *messageLabel;
-
+@property (nonatomic, copy) NSMutableAttributedString *meessageAttributedString;
 @property (nonatomic, assign) CGFloat contentWidth;
 @property (nonatomic, assign) CGFloat contentMinHeight;
 @property (nonatomic, assign) CGFloat space;
