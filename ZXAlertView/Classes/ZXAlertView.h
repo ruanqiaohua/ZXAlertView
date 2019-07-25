@@ -23,6 +23,7 @@ typedef void(^ZXActionBlock)(ZXAlertView *alert);
 @property (nonatomic, assign) CGFloat bottomHeight;
 @property (nonatomic, assign) CGFloat lineHeight;
 @property (nonatomic, assign) BOOL backgroundTouchHidden;
+@property (nonatomic) NSTextAlignment    messageTextAlignment;
 
 + (instancetype)alertWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message;
 - (void)addButton:(UIButton *)button block:(ZXActionBlock)block;

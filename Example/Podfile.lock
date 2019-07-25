@@ -1,5 +1,5 @@
 PODS:
-  - ZXAlertView (0.1.0)
+  - ZXAlertView (2.1.1)
 
 DEPENDENCIES:
   - ZXAlertView (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZXAlertView: 56b651c138d7abf45311cd296611609e7684ecf1
+  ZXAlertView: 0eed2a57db80d4891e0e7545f5f948f249e1e9a8
 
 PODFILE CHECKSUM: fffe22f2df3d2dafc285ecf71de1feccae8f1eb0
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.3

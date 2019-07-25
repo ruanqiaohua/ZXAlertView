@@ -36,6 +36,7 @@
     view.space = 20;
     view.bottomHeight = 45;
     view.lineHeight = 0.5;
+    view.messageTextAlignment = NSTextAlignmentCenter;
     return view;
 }
 
@@ -102,7 +103,7 @@
         CGFloat y = CGRectGetMaxY(_titleLabel.frame);
         CGFloat height = 0;
         _messageLabel = [[UILabel alloc] init];
-        _messageLabel.textAlignment = NSTextAlignmentCenter;
+        _messageLabel.textAlignment = _messageTextAlignment;
         _messageLabel.numberOfLines = 0;
         _messageLabel.font = [UIFont systemFontOfSize:14];
         _messageLabel.textColor = [UIColor colorWithRed:62.0f/255.0f green:62.0f/255.0f blue:62.0f/255.0f alpha:1.0f];

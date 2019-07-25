@@ -1,8 +1,8 @@
 {
   "name": "ZXAlertView",
-  "version": "0.1.0",
+  "version": "2.1.1",
   "summary": "自定义的一个弹窗",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "自定义的一个弹窗.",
   "homepage": "https://github.com/ruanqiaohua/ZXAlertView",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ruanqiaohua/ZXAlertView.git",
-    "tag": "0.1.0"
+    "tag": "2.1.1"
   },
   "platforms": {
     "ios": "8.0"
